@@ -1,0 +1,13 @@
+function VowelCount(str) { 
+
+  var count = 0;
+  
+  for (var i =0; i < str.length; i++) {
+    if ( str[i].match(/[aeiou]/i) ) {
+      count += 1;
+    }
+  }
+  // code goes here  
+  return count; 
+         
+}
