@@ -1,0 +1,27 @@
+function ArithGeo(arr) { 
+  
+  var arith = arr[1]-arr[0];
+  var geom = arr[1]/arr[0];
+  var isA = true;
+  var isG = true;
+  
+  for (var i = 1; i < arr.length; i++) {
+    if ( arr[i] - arr[i-1] != arith ) {
+      isA = false;
+    }
+    if ( arr[i]/arr[i-1] != geom ) {
+      isG = false;
+    }
+  }
+
+  if( isA == true ) {
+    return "Arithmetic";
+  }
+  else if( isG == true ) {
+    return "Geometric";
+  }
+  else {
+    return -1;
+  }
+         
+}
