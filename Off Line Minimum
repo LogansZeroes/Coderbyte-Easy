@@ -1,0 +1,20 @@
+function OffLineMinimum(strArr) { 
+
+  var arr = [];
+  var removed = [];
+  
+  for ( i in strArr ) {
+    if (strArr[i] === "E") {
+      var min = Math.min.apply(Math, arr);
+      var pos = arr.indexOf(min);
+      arr.splice(pos,1);
+      removed.push(min);
+    }
+    else {
+      arr.push(parseInt(strArr[i]));
+    }
+  }
+  // code goes here  
+  return removed.join(","); 
+         
+}
