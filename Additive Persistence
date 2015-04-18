@@ -1,0 +1,15 @@
+function AdditivePersistence(num) { 
+
+  
+  var str = num.toString();
+  var count = 0;
+  
+  while ( str.length > 1 ) {
+    str = eval(str.split('').join('+')).toString();
+    count ++;
+  }
+  
+  // code goes here  
+  return count; 
+         
+}
