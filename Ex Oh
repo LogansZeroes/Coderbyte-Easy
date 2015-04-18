@@ -1,0 +1,22 @@
+function ExOh(str) { 
+
+  var xcount = 0;
+  var ocount = 0;
+  
+  for (var i =0; i < str.length; i++) {
+    if (str[i].toLowerCase() === "x") {
+      xcount ++;
+    }
+    else if (str[i].toLowerCase() === "o") {
+      ocount ++;
+    }
+  }
+  // code goes here  
+  if ( xcount == ocount) {
+    return "true";
+  }
+  else {
+  return "false"; 
+  }
+         
+}
