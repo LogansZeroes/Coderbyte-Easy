@@ -1,0 +1,10 @@
+function NumberAddition(str) { 
+
+  var nums = str.match(/\d+/g);
+  
+  
+  
+  // code goes here  
+  return eval(nums.join(' + ')); 
+         
+}
