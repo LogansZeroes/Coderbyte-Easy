@@ -1,0 +1,11 @@
+function FirstFactorial(num) { 
+
+  var temp = 1;
+  
+  for (var x = 1; x <= num; x++) {
+    temp *= x;
+  }
+  // code goes here  
+  return temp; 
+         
+}
