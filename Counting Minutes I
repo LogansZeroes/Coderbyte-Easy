@@ -1,0 +1,51 @@
+function CountingMinutesI(str) { 
+
+  var arr = str.split("-");
+  var ans = [];
+  var diff = 0;
+  
+  
+  for (var i=0; i < arr.length; i++){
+    var temp = arr[i].split(':');
+    
+    for (var x = 0; x < temp.length; x++) {
+      ans.push(temp[x]);
+    }
+  }
+    
+  for (var i=0; i < ans.length; i++) {  
+	  if (ans[i].match(/[am]/)) {
+          ans[i] = ans[i].replace('am', '');
+        if (ans[i-1] == 12 && i-1 == 0) {
+          ans[i-1] = 0;
+        }
+        else if (ans[i-1] == 12 && i-1 == 2) {
+          ans[i-1] = 24;
+        }
+  	}
+  	  if (ans[i].match(/[pm]/)) {
+      	  ans[i] = ans[i].replace('pm','');
+  		  ans[i-1] = parseInt(ans[i-1])+ 12;
+        if(ans[i-1] >= 24) {
+          ans[i-1] -= 24;
+        }
+	}
+    ans[i] = parseInt(ans[i]);
+}
+  
+  var sum1 = ans[0]*60 + ans[1];
+  var sum2 = ans[2]*60 + ans[3];
+  
+  if ( sum2 === 0 ) {
+    sum2 = 24*60;
+  }
+  
+  if (sum2 < sum1) {
+    diff = 60*24 - sum1 + sum2;
+  }
+  else diff = sum2 - sum1;
+           
+  // code goes here  
+ return diff; 
+         
+}
