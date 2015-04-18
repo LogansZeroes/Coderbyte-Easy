@@ -1,0 +1,13 @@
+function MultiplicativePersistence(num) { 
+
+  var count = 0;
+  str = num.toString();
+  
+  while ( str.length > 1 ) {
+    str = eval(str.split('').join(' * ')).toString();
+    count ++;
+  }
+  // code goes here  
+  return count; 
+         
+}
