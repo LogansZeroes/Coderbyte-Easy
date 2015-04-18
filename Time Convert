@@ -1,0 +1,7 @@
+function TimeConvert(num) { 
+
+  
+  // code goes here  
+  return parseInt(num/60).toString() + ":" + parseInt(num%60).toString(); 
+         
+}
