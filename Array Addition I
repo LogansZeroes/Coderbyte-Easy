@@ -1,0 +1,26 @@
+function ArrayAdditionI(arr) { 
+
+  var max = Math.max.apply(Math, arr);
+  var sum = 0;
+  arr.splice(arr.indexOf(max),1);
+  
+  for (i=0; i < arr.length - 1; i++) {
+    var sum = arr[i];
+    var x = i+1;
+    
+    for (x = i+1; x < arr.length; x++) {
+      sum += arr[x];
+      if ( sum > max ) {
+        sum -= arr[i]
+      }
+      else if ( sum === max ) {
+        return true;
+      }
+    }
+    if ( sum === max ) {
+      return true;
+    }
+  }
+return false;
+         
+}
