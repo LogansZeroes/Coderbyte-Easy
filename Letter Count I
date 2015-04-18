@@ -1,0 +1,27 @@
+function LetterCountI(str) { 
+  
+  var arr = str.split(" ");
+  var count = [];
+  
+  for (i in arr) {
+    var word = arr[i].split("");
+    count[i] = 0;
+    
+    for (var x = 0; x < word.length; x++) {
+      for (var j = x+1; j < word.length; j++) {
+        if (word[x] === word[j]) {
+          count[i] ++;
+        }
+      }
+    }
+  }
+ var ind = count.indexOf(Math.max.apply(Math, count));
+
+  if ( Math.max.apply(Math, count) === 0 ) {
+    return -1;
+  }
+  // code goes here  
+  
+  return arr[ind]; 
+         
+}
