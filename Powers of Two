@@ -1,0 +1,16 @@
+function PowersofTwo(num) { 
+
+  var remainder = 0;
+  var ans = false;
+  
+  while (remainder === 0) {
+    remainder = num%2;
+    num = num/2;
+    if (num === 1) {
+      return ans = true;
+    }
+  }
+  // code goes here  
+  return ans; 
+         
+}
