@@ -1,0 +1,32 @@
+function LetterChanges(str) { 
+
+  var arr = str.toLowerCase().split('');
+  arr = letterShift(arr);
+  arr = capitalizeVowel(arr);
+  
+  return arr.join('');
+  // code goes here  
+
+  function letterShift(arr) {
+    for(var i = 0; i <arr.length; i++) {
+      if(arr[i].match(/[a-z]/)) {
+        var code = arr[i].charCodeAt(0);
+        if (code === 122) {
+          code = 96;
+        }
+        arr[i] = String.fromCharCode(code + 1);
+      }
+    }
+    return arr;
+  }
+  
+  function capitalizeVowel(arr) {
+    for (x in arr) {
+      if(arr[x].match(/[aeiou]/)) {
+        arr[x] = arr[x].toUpperCase();
+      }
+    }
+    return arr;
+  }
+         
+}
