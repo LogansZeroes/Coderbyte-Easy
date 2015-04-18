@@ -1,0 +1,29 @@
+function SecondGreatLow(arr) { 
+
+
+  var ans = [];
+  arr.sort(function(a, b){ return a-b});
+  
+  var smallest = arr[0];
+  var largest = arr[arr.length-1];
+  
+  for (var i = arr.length-1; i >= 0; i--) {
+    if (arr[i] > smallest) {
+      ans[0] = arr[i];
+    }
+  }
+  
+  for (x in arr) {
+    if (arr[x] < largest) {
+      ans[1] = arr[x];
+    }
+  }
+  
+  // code goes here  
+  return ans.join(" "); 
+         
+}
+   
+// keep this function call here 
+// to see how to enter arguments in JavaScript scroll down
+SecondGreatLow(readline());           
