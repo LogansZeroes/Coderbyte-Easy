@@ -1,0 +1,35 @@
+function MeanMode(arr) { 
+  
+  arr.sort(function(a,b) {
+    return a-b;
+  });
+  
+  var current = 0;
+  var top = 1;
+  var mode = 0;
+  var count = 0;
+  
+  for (var i = 0; i < arr.length; i++) {
+    for (var x = i+1; x < arr.length; x++) {
+      if (arr[i] === arr[x]) {
+        count++
+      }
+      if (count > top) {
+        top = count;
+        current = arr[i];
+      }
+    }
+    count = 0;
+  }
+  mode = current;
+  
+  var mean = 0;
+  for (j in arr) {
+    mean += arr[j]
+  }
+  mean = mean/arr.length;
+
+  // code goes here  
+  return (mode === mean)? 1 :0; 
+         
+}
